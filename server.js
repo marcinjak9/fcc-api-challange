@@ -19,7 +19,7 @@ app.get('/:date', function(req,res) {
 		body.unixDate = date.getTime()/1000;
 	} else {
 		body.unixDate = parseInt(parameter);
-		body.naturalDate = moment.unix(parameter).format('YYYY');
+		body.naturalDate = moment.unix(parameter).format('MMMM D, YYYY');
 	}
 	res.send(JSON.stringify(body));
 });
