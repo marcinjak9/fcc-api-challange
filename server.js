@@ -3,6 +3,8 @@ var moment = require('moment');
 
 var app = express();
 
+var port = process.env.PORT || 3000;
+
 moment().format();
 
 app.get('/', function (req, res) {
@@ -23,6 +25,6 @@ app.get('/:date', function(req,res) {
 	}
 	res.send(JSON.stringify(body));
 });
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+app.listen(port, function () {
+  console.log(`Example app listening on port ${port}!`);
 })
